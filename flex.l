@@ -62,7 +62,7 @@ xor (xor)
 
 //Aquí va algo más xd
 
-//Llamada al analizador lexico desde el main
+/*Llamada al analizador lexico desde el main*/
 main(){
 	yylex();
 }
