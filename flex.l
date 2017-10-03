@@ -1,7 +1,7 @@
 %{
   //Aqui va algo xd
   #define YYSTYPE double
-  #include "calc.tab.h"hola 
+  #include "calc.tab.h"
   #include <stdlib.h>
 %}
 
