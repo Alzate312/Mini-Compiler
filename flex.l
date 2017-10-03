@@ -9,11 +9,9 @@ white [ \t\n]+
 digit [0-9]
 integer {digit}+
 real {integer}("."{integer})?
-parentesis (\([\s\S]+\))
-corchetes (\{[\s\S]+\})
-if (if){parentesis}{corchetes}
-elsif {if}(else if)(parentesis)(corchetes)
-else {if}({elsif})?(else){corchetes}
+if (if)
+elsif (else if)
+else (else)
 
 
 %%
