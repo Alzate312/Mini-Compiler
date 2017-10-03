@@ -14,6 +14,11 @@ real {integer}("."{integer})?
 if (if)
 elsif (else if)
 else (else)
+and (and)
+or (or)
+not (not)
+xor (xor)
+
 
 
 %%
@@ -33,6 +38,11 @@ else (else)
 {if} return IF;
 {elsif} return ELSIF;
 {else} return ELSE;
+{and} return AND;
+{or} return OR;
+{nor} return NOT;
+{xor} return XOR;
+
 
 "+" return PLUS;
 "-" return MINUS;
@@ -42,10 +52,7 @@ else (else)
 ")" return RIGHT;
 "{" return START;
 "}" return END;
-"AND" return AND;
-"OR" return OR;
-"NOT" return NOT;
-"XOR" return XOR;
+
 
 <<EOF>> {
 	yyterminate();
