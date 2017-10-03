@@ -37,10 +37,10 @@ else (else)
 ")" return RIGHT;
 "{" return START;
 "}" return END;
-"&" return AND;
-"|" return OR;
-"~" return NOT;
-"^" return XOR;
+"AND" return AND;
+"OR" return OR;
+"NOT" return NOT;
+"XOR" return XOR;
 
 %%
 
