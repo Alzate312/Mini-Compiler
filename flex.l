@@ -1,5 +1,8 @@
 %{
   //Aqui va algo xd
+  #define YYSTYPE double
+  #include "calc.tab.h"
+  #include <stdlib.h>
 %}
 
 white [ \t\n]+
@@ -16,7 +19,14 @@ else {if}({elsif})?(else){corchetes}
 %%
 
 {white} { }
-{real} return NUMBER;
+{integer} {
+  yylval.intValue = atof(yytext);
+  return INTEGER;
+}
+{real} {
+  yylval.floatValue = new atof(yytext);
+  return REAL;
+}
 {if} return IF;
 {elsif} return ELSIF;
 {else} return ELSE;
