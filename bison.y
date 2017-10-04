@@ -14,9 +14,6 @@
 
 /* Declaraciones */
 
-//Lista de tokens
-%start lista_i;
-
 %token INTEGER
 %token INTEGERN
 %token REAL
@@ -31,8 +28,6 @@
 %left AND OR XOR
 
 
-//%type <texto> celda
-//%type <real> valor
 
 %%
 
@@ -107,7 +102,7 @@ LE: 	INTEGER  		{
         //Paste NOT file
       };
 
-	|LE AND L     	{
+	|LE AND LE    	{
         //Paste AND file
       };
 
