@@ -16,11 +16,16 @@ Code::Code() {}
 
   /* Abrir archivo resultado.s */
   void Code::openFile(){
-    resultadoFile = fopen("Source/resultado.s", "a+");
+    resultadoFile = fopen("Source/resultado.s", "a");
   };
 
   /* Abrir archivo de la ruta especificada en el parámetro, copiarlo y pegarlo en resultado.s */
-  void Code::copyFile(string source){
+  void Code::copyFileFromSource(string source){
+    /*FILE *temporal;
+    temporal = fopen(source, "r");
+    while ((string temporalString = fgetc(temporal)) != EOF)
+        fputc(temporalString, fp);
+    */
     ifstream in("Source/resultado.s");
     ofstream out(source, ios_base::out | ios_base::app);
 
@@ -30,7 +35,7 @@ Code::Code() {}
   };
 
   /* Copiar el string que se pasa como parámetro y pegarlo en resultado.s */
-  void Code::copyFile(string text){
+  void Code::copyFileFromString(string text){
     fprintf(fp, text);
     fprintf(fp, \n);
   };

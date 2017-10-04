@@ -25,10 +25,10 @@ Code(FILE *_resultadoFile);
 void openFile();
 
 /* Abrir archivo de la ruta especificada en el parámetro, copiarlo y pegarlo en resultado.s */
-void copyFile(string source);
+void copyFileFromSource(string source);
 
 /* Copiar el string que se pasa como parámetro y pegarlo en resultado.s */
-void copyFile(string text);
+void copyFileFromString(string text);
 
 /* Cerrar archivo resultado .s */
 void closeFile();
