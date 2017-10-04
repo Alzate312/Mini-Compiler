@@ -7,33 +7,30 @@ using namespace std;
 
 class Code {
 
+private:
+
+/* Atributos */
+
+FILE *resultadoFile;
+
 public:
 
-	Code();
+/* Métodos */
 
-	/* Métodos */
+/* Constructor */
+Code(FILE *_resultadoFile);
 
+/* Abrir archivo resultado.s */
+void openFile();
 
-  /* Abrir archivo resultado.s */
-  void openFile(){
+/* Abrir archivo de la ruta especificada en el parámetro, copiarlo y pegarlo en resultado.s */
+void copyFile(string source);
 
-  };
+/* Copiar el string que se pasa como parámetro y pegarlo en resultado.s */
+void copyFile(string text);
 
-  /* Abrir archivo de la ruta especificada en el parámetro, copiarlo y pegarlo en resultado.s */
-  void copyFile(string source){
-
-  };
-
-  /* Copiar el string que se pasa como parámetro y pegarlo en resultado.s */
-  void copyFile(string text){
-
-  };
-
-  /* Cerrar archivo resultado .s */
-  void closeFile(){
-    
-  };
+/* Cerrar archivo resultado .s */
+void closeFile();
 
 };
-
 #endif
