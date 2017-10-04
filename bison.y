@@ -37,7 +37,10 @@
 %%
 /*Reglas gramaticales*/
 
-E:	INTEGER  		{ };
+
+
+/*Math expression*/
+ME:	INTEGER  		{ };
 
   |INTEGERN  		{ };
 
@@ -45,18 +48,18 @@ E:	INTEGER  		{ };
 
   |REALN  		{ };
 
-	|E PLUS E     	{  };
+	|ME PLUS ME     	{  };
 
-	|E MINUS E     	{  };
+	|ME MINUS ME     	{  };
 
-	|E TIMES E     	{ };
+	|ME TIMES ME     	{ };
 
-	|E DIVIDE E 	{  };
+	|ME DIVIDE ME 	{  };
 
-	|LEFT E RIGHT	{  };
+	|LEFT ME RIGHT	{  };
 
-
-BE: INTEGER  		{ };
+/* logical expression */
+LE: INTEGER  		{ };
 
   |INTEGERN  		{ };
 
@@ -64,13 +67,23 @@ BE: INTEGER  		{ };
 
   |REALN  		{ };
 
-	|NOT BE    	{  };
+  |NOT LE    	{  };
 
-	|BE AND BE     	{  };
+	|LE AND LE     	{  };
 
-	|BE OR BE     	{ };
+	|LE OR LE     	{ };
 
-  |BE XOR BE     	{  };
+  |LE XOR LE     	{  };
+
+  /* Sentence */
+
+SE: INTEGER {};
+
+    | IF LEFT LE RIGHT START SE END {};
+
+    | IF LEFT LE RIGHT START SE END ELSIF LEFT LE RIGHT START SE END ELSE START SE END {}
+
+    | IF LEFT LE RIGHT START SE END ELSE START SE END {}
 
 %%
 
