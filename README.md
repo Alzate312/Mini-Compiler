@@ -1,10 +1,9 @@
 # Mini-Compiler
 
-A homework.
+A homework.	
+	
+## Compilation Steps:
 
-Compilation Steps:
-	$ lex flex.l
-	$ yacc bison.y
-  .
-  .
-  .
+	1. $ lex flex.l
+	2. $ yacc bison.y
+	3. etc
