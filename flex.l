@@ -38,12 +38,12 @@ xor (xor)
 
 {realn} {
   yylval.floatValue = new atof(yytext);
-  return REAL;
+  return REALN;
 }
 
 {integern} {
   yylval.floatValue = new atof(yytext);
-  return REAL;
+  return INTEGERN;
 }
 
 
