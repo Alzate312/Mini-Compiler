@@ -1,5 +1,4 @@
 %{
-  //Aqui va algo xd
   #define YYSTYPE double
   #include "calc.tab.h"
   #include <stdlib.h>
@@ -11,6 +10,9 @@ white [ \t\n]+
 digit [0-9]
 integer {digit}+
 real {integer}("."{integer})
+realn -{integer}("."{integer})
+integern -{digit}+
+
 if (if)
 elsif (else if)
 else (else)
@@ -30,6 +32,16 @@ xor (xor)
   return INTEGER;
 }
 {real} {
+  yylval.floatValue = new atof(yytext);
+  return REAL;
+}
+
+{realn} {
+  yylval.floatValue = new atof(yytext);
+  return REAL;
+}
+
+{integern} {
   yylval.floatValue = new atof(yytext);
   return REAL;
 }
@@ -59,8 +71,6 @@ xor (xor)
 }
 
 %%
-
-//Aquí va algo más xd
 
 /*Llamada al analizador lexico desde el main*/
 main(){
