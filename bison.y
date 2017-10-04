@@ -35,55 +35,97 @@
 //%type <real> valor
 
 %%
+
+
 /*Reglas gramaticales*/
 
 
 
 /*Math expression*/
-ME:	INTEGER  		{ };
+ME:	INTEGER  		{
+      //Push
+    };
 
-  |INTEGERN  		{ };
+  |INTEGERN  		{
+        //Push
+      };
 
-  |REAL 		{ };
+  |REAL 		{
+        //Push
+      };
 
-  |REALN  		{ };
+  |REALN  		{
+        //Push
+      };
 
-	|ME PLUS ME     	{  };
+	|ME PLUS ME     	{
+        //Paste adition file
+      };
 
-	|ME MINUS ME     	{  };
+	|ME MINUS ME     	{
+        //Paste substraction file
+      };
 
-	|ME TIMES ME     	{ };
+	|ME TIMES ME     	{
+        //Paste multiply file
+      };
 
-	|ME DIVIDE ME 	{  };
+	|ME DIVIDE ME     	{
+        //Paste division file
+      };
 
-	|LEFT ME RIGHT	{  };
+	|LEFT ME RIGHT     	{
+        //Operate
+      };
 
 /* logical expression */
-LE: INTEGER  		{ };
+LE: 	INTEGER  		{
+      //Push
+    };
 
-  |INTEGERN  		{ };
+  |INTEGERN  		{
+        //Push
+      };
 
-  |REAL 		{ };
+  |REAL 		{
+        //Push
+      };
 
-  |REALN  		{ };
+  |REALN  		{
+        //Push
+      };
 
-  |NOT LE    	{  };
+  |NOT LE     	{
+        //Paste NOT file
+      };
 
-	|LE AND LE     	{  };
+	|LE AND L     	{
+        //Paste AND file
+      };
 
-	|LE OR LE     	{ };
+	|LE OR LE     	{
+        //Paste OR file
+      };
 
-  |LE XOR LE     	{  };
+  |LE XOR LE     	{
+        //Paste XOR file
+      };
 
   /* Sentence */
 
 SE: INTEGER {};
 
-    | IF LEFT LE RIGHT START SE END {};
+    | IF LEFT LE RIGHT START SE END {
+        //No sé
+    };
 
-    | IF LEFT LE RIGHT START SE END ELSIF LEFT LE RIGHT START SE END ELSE START SE END {}
+    | IF LEFT LE RIGHT START SE END ELSIF LEFT LE RIGHT START SE END ELSE START SE END {
+        //No sé
+    };
 
-    | IF LEFT LE RIGHT START SE END ELSE START SE END {}
+    | IF LEFT LE RIGHT START SE END ELSE START SE END {
+      //No sé
+    };
 
 %%
 
