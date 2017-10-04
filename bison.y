@@ -36,8 +36,8 @@
 //%type <real> valor
 
 %%
-//Reglas gramaticales
+/*Reglas gramaticales*/
 
 %%
 
-//Cosas adicionales
+/*Cosas adicionales*/
