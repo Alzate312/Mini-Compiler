@@ -4,7 +4,7 @@
   #include <stdlib.h>
 
   #include "Code.hpp"
-  Code code; //Instancia
+  Code code; /* Instancia */
 %}
 
 /*Definiciones*/
