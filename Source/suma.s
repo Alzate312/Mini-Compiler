@@ -48,7 +48,7 @@ STA 	$56
 
 
 LDA		$AB
-CMP		$56 
+CMP		$56
 BEQ		L1 			;si ambos signos son iguales
 JMP		L2			;si los signos son diferentes
 
@@ -62,8 +62,8 @@ L3: CLC
 	STA $77
 	LDA $AA
 	ADC $55
-	JMP END	
-	
+	JMP END
+
 L4: CLC
 	LDA #1
 	STA $77
@@ -71,28 +71,28 @@ L4: CLC
 	LDA $AA
 	ADC $55
 	JMP END
-	
-;¿Cuál número es mayor?
+
+;ï¿½Cuï¿½l nï¿½mero es mayor?
 L2:	CLC
 	LDA $AA
 	CMP $55
 	BCS L5	; AA >= 55
 	JMP L6	; AA < 55
-	
+
 L5: LDA $AB
 	STA $77
 	LDA #0
 	LDA $AA
 	SBC $55
 	JMP END
-	
+
 L6:	LDA $56
 	STA $77
 	LDA #0
 	LDA $55
 	SBC $AA
 	JMP END
-	
+
 
 
 

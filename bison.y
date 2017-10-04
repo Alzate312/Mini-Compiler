@@ -43,19 +43,23 @@
 
 /*Math expression*/
 ME:	INTEGER  		{
-      //Push
+      //LDA #INTEGER
+      //PHA
     };
 
   |INTEGERN  		{
-        //Push
+    //LDA #INTEGER
+    //PHA
       };
 
   |REAL 		{
-        //Push
+    //LDA #INTEGER
+    //PHA
       };
 
   |REALN  		{
-        //Push
+    //LDA #INTEGER
+    //PHA
       };
 
 	|ME PLUS ME     	{
@@ -80,19 +84,23 @@ ME:	INTEGER  		{
 
 /* logical expression */
 LE: 	INTEGER  		{
-      //Push
+  //LDA #INTEGER
+  //PHA
     };
 
   |INTEGERN  		{
-        //Push
+    //LDA #INTEGER
+    //PHA
       };
 
   |REAL 		{
-        //Push
+    //LDA #INTEGER
+    //PHA
       };
 
   |REALN  		{
-        //Push
+    //LDA #INTEGER
+    //PHA
       };
 
   |NOT LE     	{
