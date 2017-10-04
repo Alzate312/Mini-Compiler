@@ -10,7 +10,7 @@
 white [ \t\n]+
 digit [0-9]
 integer {digit}+
-real {integer}("."{integer})?
+real {integer}("."{integer})
 if (if)
 elsif (else if)
 else (else)

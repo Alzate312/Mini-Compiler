@@ -12,13 +12,7 @@
   void yyerror(char *s);
 %}
 
-//puede ser util equis de
-%union
-{
-  float real;
-  int numero;
-  char* texto;
-}
+/* Declaraciones */
 
 //Lista de tokens
 %start lista_i;
@@ -47,4 +41,3 @@
 %%
 
 //Cosas adicionales
-
