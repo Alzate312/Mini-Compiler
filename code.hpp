@@ -33,5 +33,12 @@ void copyFileFromString(string text);
 /* Cerrar archivo resultado .s */
 void closeFile();
 
+/* Dividir número - parte baja, alta y decimal */
+void splitNumber();
+
+/* Revisar cuál de las tres partes anteriores no es cero */
+void reviewNumer();
+
+
 };
 #endif

@@ -39,7 +39,7 @@
 
 /*Reglas gramaticales*/
 
-
+/* Órden de pusheo: Alto bajo decimal signo +/
 
 /*Math expression*/
 ME:	INTEGER  		{
