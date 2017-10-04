@@ -2,6 +2,9 @@
   #define YYSTYPE double
   #include "calc.tab.h"
   #include <stdlib.h>
+
+  #include "Code.hpp"
+  Code code; //Instancia
 %}
 
 /*Definiciones*/
