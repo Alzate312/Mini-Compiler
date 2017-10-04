@@ -17,19 +17,14 @@
 //Lista de tokens
 %start lista_i;
 
-%token PLUS;
-%token MINUS;
-%token TIMES;
-%token DIVIDE;
-%token LEFT;
-%token RIGHT;
-%token START;
-%token END;
-%token AND;
-%token OR;
-%token NOT;
-%token XOR;
+%token LEFT RIGHT;
+%token START END;
+%token IF ELSIF ELSE;
 
+%left NOT
+%left TIMES DIVIDE
+%left PLUS MINUS
+%left AND OR XOR
 
 
 //%type <texto> celda
