@@ -12,6 +12,7 @@
   void yyerror(char *s);
   #define YYSTYPE int
   extern YYSTYPE yyltype;
+  code.openFile();
 %}
 
 %token <number> INTEGER INTEGERN REAL REALN
@@ -31,10 +32,11 @@
 
 /* Órden de pusheo: Alto bajo decimal signo +/
 
-/*Math expression*/
-ME:	INTEGER  		{
-      //LDA #INTEGER
-      //PHA
+/* Numbers */
+
+N:  INTEGER  		{
+  //LDA #INTEGER
+  //PHA
     };
 
   |INTEGERN  		{
@@ -52,7 +54,11 @@ ME:	INTEGER  		{
     //PHA
       };
 
-	|ME PLUS ME     	{
+
+
+
+/*Math expression*/
+ME: ME PLUS ME     	{
         //Paste adition file
       };
 
@@ -73,27 +79,7 @@ ME:	INTEGER  		{
       };
 
 /* logical expression */
-LE: 	INTEGER  		{
-  //LDA #INTEGER
-  //PHA
-    };
-
-  |INTEGERN  		{
-    //LDA #INTEGER
-    //PHA
-      };
-
-  |REAL 		{
-    //LDA #INTEGER
-    //PHA
-      };
-
-  |REALN  		{
-    //LDA #INTEGER
-    //PHA
-      };
-
-  |NOT LE     	{
+LE:  NOT LE     	{
         //Paste NOT file
       };
 
