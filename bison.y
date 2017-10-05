@@ -12,8 +12,6 @@
   void yyerror(char *s);
 %}
 
-/* Declaraciones */
-
 %token <number> INTEGER INTEGERN REAL REALN
 %token <token> LEFT RIGHT
 %token <token> START END

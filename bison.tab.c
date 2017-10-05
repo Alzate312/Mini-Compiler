@@ -70,6 +70,8 @@
 /* Line 189 of yacc.c  */
 #line 1 "bison.y"
 
+
+//incluimos un montón de cosas xd
   #include <stdio.h>
   #include <stdlib.h>
   #include <math.h>
@@ -82,7 +84,7 @@
 
 
 /* Line 189 of yacc.c  */
-#line 86 "bison.tab.c"
+#line 88 "bison.tab.c"
 
 /* Enabling traces.  */
 #ifndef YYDEBUG
@@ -144,7 +146,7 @@
 
 
 /* Line 264 of yacc.c  */
-#line 148 "bison.tab.c"
+#line 150 "bison.tab.c"
 
 #ifdef short
 # undef short
@@ -431,8 +433,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    25,    25,    30,    35,    40,    45,    49,    53,    57,
-      61
+       0,    33,    33,    38,    43,    48,    53,    57,    61,    65,
+      69
 };
 #endif
 
@@ -1340,7 +1342,7 @@ yyreduce:
         case 2:
 
 /* Line 1455 of yacc.c  */
-#line 25 "bison.y"
+#line 33 "bison.y"
     {
       //LDA #INTEGER
       //PHA
@@ -1350,7 +1352,7 @@ yyreduce:
   case 3:
 
 /* Line 1455 of yacc.c  */
-#line 30 "bison.y"
+#line 38 "bison.y"
     {
     //LDA #INTEGER
     //PHA
@@ -1360,7 +1362,7 @@ yyreduce:
   case 4:
 
 /* Line 1455 of yacc.c  */
-#line 35 "bison.y"
+#line 43 "bison.y"
     {
     //LDA #INTEGER
     //PHA
@@ -1370,7 +1372,7 @@ yyreduce:
   case 5:
 
 /* Line 1455 of yacc.c  */
-#line 40 "bison.y"
+#line 48 "bison.y"
     {
     //LDA #INTEGER
     //PHA
@@ -1380,7 +1382,7 @@ yyreduce:
   case 6:
 
 /* Line 1455 of yacc.c  */
-#line 45 "bison.y"
+#line 53 "bison.y"
     {
         //Paste adition file
       ;}
@@ -1389,7 +1391,7 @@ yyreduce:
   case 7:
 
 /* Line 1455 of yacc.c  */
-#line 49 "bison.y"
+#line 57 "bison.y"
     {
         //Paste substraction file
       ;}
@@ -1398,7 +1400,7 @@ yyreduce:
   case 8:
 
 /* Line 1455 of yacc.c  */
-#line 53 "bison.y"
+#line 61 "bison.y"
     {
         //Paste multiply file
       ;}
@@ -1407,7 +1409,7 @@ yyreduce:
   case 9:
 
 /* Line 1455 of yacc.c  */
-#line 57 "bison.y"
+#line 65 "bison.y"
     {
         //Paste division file
       ;}
@@ -1416,7 +1418,7 @@ yyreduce:
   case 10:
 
 /* Line 1455 of yacc.c  */
-#line 61 "bison.y"
+#line 69 "bison.y"
     {
         //Operate
       ;}
@@ -1425,7 +1427,7 @@ yyreduce:
 
 
 /* Line 1455 of yacc.c  */
-#line 1429 "bison.tab.c"
+#line 1431 "bison.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1637,7 +1639,7 @@ yyreturn:
 
 
 /* Line 1675 of yacc.c  */
-#line 116 "bison.y"
+#line 124 "bison.y"
 
 
 /*Cosas adicionales*/

@@ -392,12 +392,15 @@ char *yytext;
   int yywrap(void) {}
   int yyerror(void) {}
   #define YYSTYPE double
+  #include "bison.h"
+  #include <ctype.h>
   #include <iostream>
   #include <stdlib.h>
   #include <stdio.h>
+  #include <math.h>
   #include "code.hpp"
   Code code;
-#line 401 "lex.yy.c"
+#line 404 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -548,9 +551,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 25 "flex.l"
+#line 28 "flex.l"
 
-#line 554 "lex.yy.c"
+#line 557 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -635,12 +638,12 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 26 "flex.l"
+#line 29 "flex.l"
 { }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 27 "flex.l"
+#line 30 "flex.l"
 {
   yylval.intValue = atof(yytext);
   return INTEGER;
@@ -648,7 +651,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 31 "flex.l"
+#line 34 "flex.l"
 {
   yylval.floatValue = new atof(yytext);
   return REAL;
@@ -656,7 +659,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 35 "flex.l"
+#line 38 "flex.l"
 {
   yylval.floatValue = new atof(yytext);
   return REALN;
@@ -664,7 +667,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 39 "flex.l"
+#line 42 "flex.l"
 {
   yylval.intValue = new atof(yytext);
   return INTEGERN;
@@ -672,91 +675,91 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 43 "flex.l"
+#line 46 "flex.l"
 {return IF;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 44 "flex.l"
+#line 47 "flex.l"
 {return ELSIF;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 45 "flex.l"
+#line 48 "flex.l"
 {return ELSE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 46 "flex.l"
+#line 49 "flex.l"
 {return AND;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 47 "flex.l"
+#line 50 "flex.l"
 {return OR;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 48 "flex.l"
+#line 51 "flex.l"
 {return NOT;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 49 "flex.l"
+#line 52 "flex.l"
 {return XOR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 50 "flex.l"
+#line 53 "flex.l"
 {return PLUS;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 51 "flex.l"
+#line 54 "flex.l"
 {return MINUS;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 52 "flex.l"
+#line 55 "flex.l"
 {return TIMES;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 53 "flex.l"
+#line 56 "flex.l"
 {return DIVIDE;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 54 "flex.l"
+#line 57 "flex.l"
 {return LEFT;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 55 "flex.l"
+#line 58 "flex.l"
 {return RIGHT;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 56 "flex.l"
+#line 59 "flex.l"
 {return START;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 57 "flex.l"
+#line 60 "flex.l"
 {return END;}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 58 "flex.l"
+#line 61 "flex.l"
 {
 	yyterminate();
 }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 61 "flex.l"
+#line 64 "flex.l"
 ECHO;
 	YY_BREAK
-#line 760 "lex.yy.c"
+#line 763 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1640,7 +1643,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 61 "flex.l"
+#line 64 "flex.l"
 
 int main(void) {
    yyparse();
