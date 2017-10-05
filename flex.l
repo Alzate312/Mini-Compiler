@@ -3,7 +3,7 @@
   int yywrap(void) {}
   int yyerror(void) {}
   #define YYSTYPE double
-  #include "bison.h"
+  #include "bison.tab.h"
   #include <ctype.h>
   #include <iostream>
   #include <stdlib.h>
