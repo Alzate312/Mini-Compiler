@@ -4,14 +4,14 @@
   #include <stdio.h>
   #include <stdlib.h>
   #include <math.h>
-  #include "string.h"
+  #include <string.h>
   extern int yylex(void);
   extern char *yytext;
   extern int linea;
   extern FILE *yyin;
   void yyerror(char *s);
   #define YYSTYPE int
-  extern YYSTYPE yyltype
+  extern YYSTYPE yyltype;
 %}
 
 %token <number> INTEGER INTEGERN REAL REALN
