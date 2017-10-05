@@ -14,20 +14,15 @@
 
 /* Declaraciones */
 
-%token INTEGER
-%token INTEGERN
-%token REAL
-%token REALN
-%token LEFT RIGHT;
-%token START END;
-%token IF ELSIF ELSE;
-
+%token <number> INTEGER INTEGERN REAL REALN
+%token <token> LEFT RIGHT
+%token <token> START END
+%token <token> IF ELSIF ELSE
+%token <token> NOT TIMES DIVIDE PLUS MINUS AND OR XOR
 %left NOT
 %left TIMES DIVIDE
 %left PLUS MINUS
 %left AND OR XOR
-
-
 
 %%
 
@@ -116,9 +111,7 @@ LE: 	INTEGER  		{
 
   /* Sentence */
 
-SE: INTEGER {};
-
-    | IF LEFT LE RIGHT START SE END {
+SE: IF LEFT LE RIGHT START SE END {
         //No sé
     };
 

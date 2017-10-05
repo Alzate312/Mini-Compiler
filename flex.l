@@ -1,4 +1,7 @@
 %{
+  int main(void) {}
+  int yywrap(void) {}
+  int yyerror(void) {}
   #define YYSTYPE double
   #include <iostream>
   #include <stdlib.h>
@@ -60,11 +63,9 @@ int main(void) {
    yyparse();
    return 0;
 }
-
 int yywrap(void) {
    return 0;
 }
-
 int yyerror(void) {
     printf("Error\n");
     exit(1);
