@@ -15,9 +15,6 @@
 white [ \t\n]+
 digit [0-9]
 integer {digit}+
-real {integer}("."{integer})
-realn -{integer}("."{integer})
-integern -{digit}+
 if (if)
 elsif (elsif)
 else (else)
@@ -31,18 +28,7 @@ xor (xor)
   yylval.intValue = atof(yytext);
   return INTEGER;
 }
-{real} {
-  yylval.floatValue = new atof(yytext);
-  return REAL;
-}
-{realn} {
-  yylval.floatValue = new atof(yytext);
-  return REALN;
-}
-{integern} {
-  yylval.intValue = new atof(yytext);
-  return INTEGERN;
-}
+
 {if} {return IF;}
 {elsif} {return ELSIF;}
 {else} {return ELSE;}
