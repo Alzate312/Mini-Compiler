@@ -6,4 +6,4 @@ A homework.
 
 	1. $ lex flex.l
 	2. $ yacc bison.y
-	3. $ g++ -g lex.yy.c y.tab.c -o calc
+	3. $ g++ -g lex.yy.c bison.tab.c -o calc
