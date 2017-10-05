@@ -1,8 +1,9 @@
 %{
   #define YYSTYPE double
-  #include "calc.tab.h"
+  #include <iostream>
   #include <stdlib.h>
-  #include "Code.hpp"
+  #include <stdio.h>
+  #include "code.hpp"
   Code code;
 %}
 white [ \t\n]+
@@ -36,25 +37,35 @@ xor (xor)
   yylval.intValue = new atof(yytext);
   return INTEGERN;
 }
-{if} return IF;
-{elsif} return ELSIF;
-{else} return ELSE;
-{and} return AND;
-{or} return OR;
-{not} return NOT;
-{xor} return XOR;
-"+" return PLUS;
-"-" return MINUS;
-"*" return TIMES;
-"/" return DIVIDE;
-"(" return LEFT;
-")" return RIGHT;
-"{" return START;
-"}" return END;
+{if} {return IF;}
+{elsif} {return ELSIF;}
+{else} {return ELSE;}
+{and} {return AND;}
+{or} {return OR;}
+{not} {return NOT;}
+{xor} {return XOR;}
+"+" {return PLUS;}
+"-" {return MINUS;}
+"*" {return TIMES;}
+"/" {return DIVIDE;}
+"(" {return LEFT;}
+")" {return RIGHT;}
+"{" {return START;}
+"}" {return END;}
 <<EOF>> {
 	yyterminate();
 }
 %%
-main(){
-	yylex();
+int main(void) {
+   yyparse();
+   return 0;
+}
+
+int yywrap(void) {
+   return 0;
+}
+
+int yyerror(void) {
+    printf("Error\n");
+    exit(1);
 }

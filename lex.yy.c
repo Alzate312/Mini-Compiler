@@ -491,11 +491,12 @@ char *yytext;
 #line 1 "flex.l"
 #line 2 "flex.l"
   #define YYSTYPE double
-  #include "calc.tab.h"
+  #include <iostream>
   #include <stdlib.h>
-  #include "Code.hpp"
+  #include <stdio.h>
+  #include "code.hpp"
   Code code;
-#line 499 "lex.yy.c"
+#line 500 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -713,9 +714,9 @@ YY_DECL
 		}
 
 	{
-#line 21 "flex.l"
+#line 22 "flex.l"
 
-#line 719 "lex.yy.c"
+#line 720 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -775,12 +776,12 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 /* rule 1 can match eol */
 YY_RULE_SETUP
-#line 22 "flex.l"
+#line 23 "flex.l"
 { }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 23 "flex.l"
+#line 24 "flex.l"
 {
   yylval.intValue = atof(yytext);
   return INTEGER;
@@ -788,7 +789,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 27 "flex.l"
+#line 28 "flex.l"
 {
   yylval.floatValue = new atof(yytext);
   return REAL;
@@ -796,7 +797,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 31 "flex.l"
+#line 32 "flex.l"
 {
   yylval.floatValue = new atof(yytext);
   return REALN;
@@ -804,7 +805,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 35 "flex.l"
+#line 36 "flex.l"
 {
   yylval.intValue = new atof(yytext);
   return INTEGERN;
@@ -812,91 +813,91 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 39 "flex.l"
-return IF;
+#line 40 "flex.l"
+{return IF;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 40 "flex.l"
-return ELSIF;
+#line 41 "flex.l"
+{return ELSIF;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 41 "flex.l"
-return ELSE;
+#line 42 "flex.l"
+{return ELSE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 42 "flex.l"
-return AND;
+#line 43 "flex.l"
+{return AND;}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 43 "flex.l"
-return OR;
+#line 44 "flex.l"
+{return OR;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 44 "flex.l"
-return NOT;
+#line 45 "flex.l"
+{return NOT;}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 45 "flex.l"
-return XOR;
+#line 46 "flex.l"
+{return XOR;}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 46 "flex.l"
-return PLUS;
+#line 47 "flex.l"
+{return PLUS;}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 47 "flex.l"
-return MINUS;
+#line 48 "flex.l"
+{return MINUS;}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 48 "flex.l"
-return TIMES;
+#line 49 "flex.l"
+{return TIMES;}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 49 "flex.l"
-return DIVIDE;
+#line 50 "flex.l"
+{return DIVIDE;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 50 "flex.l"
-return LEFT;
+#line 51 "flex.l"
+{return LEFT;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 51 "flex.l"
-return RIGHT;
+#line 52 "flex.l"
+{return RIGHT;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 52 "flex.l"
-return START;
+#line 53 "flex.l"
+{return START;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 53 "flex.l"
-return END;
+#line 54 "flex.l"
+{return END;}
 	YY_BREAK
 case YY_STATE_EOF(INITIAL):
-#line 54 "flex.l"
+#line 55 "flex.l"
 {
 	yyterminate();
 }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 57 "flex.l"
+#line 58 "flex.l"
 ECHO;
 	YY_BREAK
-#line 900 "lex.yy.c"
+#line 901 "lex.yy.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -1895,10 +1896,20 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 57 "flex.l"
+#line 58 "flex.l"
 
 
-main(){
-	yylex();
+int main(void) {
+   yyparse();
+   return 0;
+}
+
+int yywrap(void) {
+   return 0;
+}
+
+int yyerror(void) {
+    printf("Error\n");
+    exit(1);
 }
 
