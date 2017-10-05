@@ -10,6 +10,8 @@
   extern int linea;
   extern FILE *yyin;
   void yyerror(char *s);
+  #define YYSTYPE int
+  extern YYSTYPE yyltype
 %}
 
 %token <number> INTEGER INTEGERN REAL REALN
