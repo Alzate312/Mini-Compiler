@@ -15,7 +15,7 @@
   code.openFile();
 %}
 
-%token <number> INTEGER INTEGERN REAL REALN
+%token <number> INTEGER
 %token <token> LEFT RIGHT
 %token <token> START END
 %token <token> IF ELSIF ELSE
@@ -39,21 +39,7 @@ N:  INTEGER  		{
   //PHA
     };
 
-  |INTEGERN  		{
-    //LDA #INTEGER
-    //PHA
-      };
-
-  |REAL 		{
-    //LDA #INTEGER
-    //PHA
-      };
-
-  |REALN  		{
-    //LDA #INTEGER
-    //PHA
-      };
-
+      
 
 
 
